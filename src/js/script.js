@@ -8,18 +8,27 @@ async function buscarUsuario() {
    const userName = digitado.value.trim();
 
    if (userName === '') {
-      document.querySelector('.profile-data').innerHTML = `<h2>Usuário não existe</h2>`;
+      document.querySelector('.profile-data').innerHTML = `
+      <p>🔺</p>
+      <h2>Preencha o campo</h2>`;
       return;
    }
 
    const userResponse = await fetch(api.user(userName));
    const user = await userResponse.json();
 
+   if(user.message === 'Not Found') {
+      document.querySelector('.profile-data').innerHTML = `<h2>Usuário não encontrado</h2>`;
+      return;
+   }
+
    const reposResponse = await fetch(api.repo(userName));
    const repos = await reposResponse.json();
 
    const eventsResponse = await fetch(api.events(userName));
    const events = await eventsResponse.json();
+   console.log(user);
+   
 
    screen.renderUser(user, repos, events)
 }
