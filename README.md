@@ -10,7 +10,7 @@ Procura usuário com seu nome de usuário do GitHub, buscando informações de:
 - Bio
 - Repositorios
 
-Input de pesquisa possui verificação de conteúdo, e a busca de usuário tambem tem validação, caso nao encontrado gera mensagem "Usuário não existe".
+Input de pesquisa possui verificação de conteúdo, e a busca de usuário tambem tem validação, caso nao encontrado gera mensagem "Usuário não encontrado".
 
 ## Tecnologias utilizadas
 
