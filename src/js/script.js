@@ -27,8 +27,6 @@ async function buscarUsuario() {
 
    const eventsResponse = await fetch(api.events(userName));
    const events = await eventsResponse.json();
-   console.log(user);
-   
 
    screen.renderUser(user, repos, events)
 }
